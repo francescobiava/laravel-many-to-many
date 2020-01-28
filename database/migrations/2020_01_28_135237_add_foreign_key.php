@@ -29,7 +29,7 @@ class AddForeignKey extends Migration
     public function down()
     {
         Schema::table('employee_task', function(Blueprint $table) {
-            $table->dropForeing('employee_task_employees');
+            $table->dropForeign('employee_task_employees');
             $table->dropForeign('task_employee_tasks');
             $table->dropColumn('employee_id');
             $table->dropColumn('task_id');
