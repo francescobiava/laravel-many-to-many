@@ -3,6 +3,7 @@
 @section('content')
   
   <h1>EMPLOYEES:</h1>
+  <a href="{{ route('employee.create') }}" class="create-button">CREATE</a>
   <ul>
     @foreach ($employees as $employee)
       <li class="employee">

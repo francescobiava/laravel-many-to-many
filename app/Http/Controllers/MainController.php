@@ -7,10 +7,22 @@ use App\Task;
 
 class MainController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         $employees = Employee::all();
         return view('pages.index', compact('employees'));
+    }
+
+    public function employeeCreate() {
+        $tasks = Task::all();
+        return view('pages.employee-create', compact('tasks'));
+    }
+
+    public function employeeStore(Request $request) {
+        $data = $request->all();
+        $employee = Employee::create($data);
+        $tasks = Task::find($data['tasks']);
+        $employee->tasks()->attach($tasks);
+        return redirect()->route('index');
     }
 
     public function employeeEdit($id) {
@@ -28,8 +40,7 @@ class MainController extends Controller
         return redirect()->route('index');
     }
 
-    public function employeeDelete($id)
-    {
+    public function employeeDelete($id) {
         $employee = Employee::findOrFail($id);
         $employee->tasks()->detach();
         $employee->delete();

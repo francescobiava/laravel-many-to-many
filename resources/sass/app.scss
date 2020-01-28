@@ -7,6 +7,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+body {
+  padding: 10px;
+}
+
 form {
   margin: 20px;
   .checkbox {
@@ -15,7 +19,15 @@ form {
 }
 
 .employee {
-  margin-bottom: 20px;
+  margin: 20px 0;
+}
+
+.create-button {
+  font-size: 14px;
+  color: #fff;
+  padding: 5px;
+  background-color: green;
+  border-radius: 5px;
 }
 
 .delete-button {
