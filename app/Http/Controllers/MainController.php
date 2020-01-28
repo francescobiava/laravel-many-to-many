@@ -13,6 +13,21 @@ class MainController extends Controller
         return view('pages.index', compact('employees'));
     }
 
+    public function employeeEdit($id) {
+        $employee = Employee::findOrFail($id);
+        $tasks = Task::all();
+        return view('pages.employee-edit', compact('employee', 'tasks'));
+    }
+
+    public function employeeUpdate(Request $request, $id) {
+        $data = $request->all();
+        $employee = Employee::findOrFail($id);
+        $employee->update($data);
+        $tasks = Task::find($data['tasks']);
+        $employee->tasks()->sync($tasks);
+        return redirect()->route('index');
+    }
+
     public function employeeDelete($id)
     {
         $employee = Employee::findOrFail($id);

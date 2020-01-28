@@ -11356,15 +11356,31 @@ a.text-dark:focus {
   }
 }
 
+form {
+  margin: 20px;
+}
+
+form .checkbox {
+  margin-left: 15px;
+}
+
 .employee {
   margin-bottom: 20px;
 }
 
-.employee .button {
+.delete-button {
   font-size: 14px;
   color: #fff;
   padding: 5px;
   background-color: #f00;
+  border-radius: 5px;
+}
+
+.edit-button {
+  font-size: 14px;
+  color: #fff;
+  padding: 5px;
+  background-color: blue;
   border-radius: 5px;
 }
 
