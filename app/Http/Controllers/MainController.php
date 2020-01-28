@@ -46,4 +46,11 @@ class MainController extends Controller
         $employee->delete();
         return redirect()->route('index');
     }
+
+    public function taskRemove($ide, $idt) {
+        $employee = Employee::findOrFail($ide);
+        $task = Task::findOrFail($idt);
+        $employee->tasks()->detach($task);
+        return redirect()->route('index');
+    }
 }

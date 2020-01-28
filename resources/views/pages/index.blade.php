@@ -15,7 +15,7 @@
         <ul>
           @foreach ($employee->tasks as $task)
             <li>
-              {{ $task->title }}:<br>
+              {{ $task->title }}: <a href="{{ route('task.remove', [$employee->id, $task->id]) }}">REMOVE</a><br>
               {{ $task->description }}
             </li>
           @endforeach

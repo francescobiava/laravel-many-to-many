@@ -18,6 +18,10 @@ Route::get('/', 'MainController@index')->name('index');
 
 Route::get('/employee/{id}/edit', 'MainController@employeeEdit')->name('employee.edit');
 Route::post('/employee/{id}/edit', 'MainController@employeeUpdate')->name('employee.update');
+
 Route::get('/employee/create', 'MainController@employeeCreate')->name('employee.create');
 Route::post('/employee/create', 'MainController@employeeStore')->name('employee.store');
+
+Route::get('/employee/{ide}/task/{idt}/remove', 'MainController@taskRemove')->name('task.remove');
+
 Route::get('/employee/{id}/delete', 'MainController@employeeDelete')->name('employee.delete');
