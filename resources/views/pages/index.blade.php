@@ -6,7 +6,7 @@
   <ul>
     @foreach ($employees as $employee)
       <li class="employee">
-        <h3>{{ $employee->firstname }} {{ $employee->lastname }}</h3>
+        <h3>{{ $employee->firstname }} {{ $employee->lastname }} <a href="{{ route('employee.delete', $employee->id) }}" class="button">DELETE</a></h3>
         <ul>
           @foreach ($employee->tasks as $task)
             <li>

@@ -11360,3 +11360,11 @@ a.text-dark:focus {
   margin-bottom: 20px;
 }
 
+.employee .button {
+  font-size: 14px;
+  color: #fff;
+  padding: 5px;
+  background-color: #f00;
+  border-radius: 5px;
+}
+

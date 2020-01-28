@@ -9,4 +9,12 @@
 
 .employee {
   margin-bottom: 20px;
+
+  .button {
+    font-size: 14px;
+    color: #fff;
+    padding: 5px;
+    background-color: #f00;
+    border-radius: 5px;
+  }
 }

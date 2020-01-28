@@ -15,3 +15,5 @@
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'MainController@index')->name('index');
+
+Route::get('/employee/{id}/delete', 'MainController@employeeDelete')->name('employee.delete');

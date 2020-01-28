@@ -12,4 +12,12 @@ class MainController extends Controller
         $employees = Employee::all();
         return view('pages.index', compact('employees'));
     }
+
+    public function employeeDelete($id)
+    {
+        $employee = Employee::findOrFail($id);
+        $employee->tasks()->detach();
+        $employee->delete();
+        return redirect()->route('index');
+    }
 }
